@@ -1,0 +1,23 @@
+version: "3.9"
+services:
+  ui:
+    build:
+      context: .
+      dockerfile: deployment/ui.Dockerfile
+      secrets:
+        - ssh_private_key
+    ports:
+      - "80:7860"
+
+  podcaster:
+    build:
+      context: .
+      dockerfile: deployment/podcaster.Dockerfile
+      secrets:
+        - ssh_private_key
+    environment:
+      - development_mode=True
+
+secrets:
+  ssh_private_key:
+    file: deployment/ssh_key.txt

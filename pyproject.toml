@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "make_a_pod"
+version = "0.1.0"
+description = ""
+authors = ["DonatasTamosauskas <donatas.tamosauskas@gmail.com>"]
+readme = "README.md"
+packages = [{include = "app"}]
+
+[tool.poetry.dependencies]
+python = "^3.10,<3.11"
+gradio = "^3.39.0"
+pydantic = "^2.1.1"
+TTS = { version = "^0.16.3", optional = true }
+pydantic-settings = "^2.0.3"
+setuptools = "^68.1.2"
+
+[tool.poetry.extras]
+tts = ["TTS"]
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.7.0"
+jupyterlab = "^4.0.2"
+mypy = "^1.5.0"
+pytest = "^7.4.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
