@@ -16,7 +16,7 @@ services:
       secrets:
         - ssh_private_key
     environment:
-      - development_mode=True
+      - development_mode=False
 
 secrets:
   ssh_private_key:
